@@ -1,6 +1,6 @@
 <?php
 
-
+ini_set('memory_limit', '-1');
 // 題目說明
 
 // 找出 10x10 陣列中的相鄰最大區塊
@@ -137,25 +137,105 @@ function count_area($found)
 
 }
 
-var_dump($area_array);
+// var_dump($area_array);
+// echo "<hr>";
+$area_n=count($area_array);
+// echo $area_n;
 
+for($s=0;$s<$area_n;$s++)
+{
+    
+    if($s==0)
+    {
+       
+          $max[]=$area_array[$s];
+     
+    }
+    else
+    {
+        
+          if(sizeof($max[0]) == sizeof($area_array[$s]))
+          {
+              
+              $max[]=$area_array[$s];
+            
+          }
+          if(sizeof($max[0]) < sizeof($area_array[$s]))
+          {
+              // var_dump($max);
+              
+              $max=Array();
+              // var_dump($max);
+              // $max=array_values($max);
+              $max[]=$area_array[$s];
+            
+          }
+        
+          if(sizeof($max[0]) > sizeof($area_array[$s]))
+          {
+              
+              continue;
+            
+          }
+          
+ 
+      
+      
+    }
+    
+    
+}
 
-// foreach($area_array as $key=>$value)
-// {
+// var_dump($max);
+
+// unset($max[0]);
+// $result = array_unique($max);
+
+// var_dump($result);
+for($i=0;$i<10;$i++)
+{
   
-//   if()
-//   {
-//     echo sizeof($value);
-//   }
+    for($j=0;$j<10;$j++)
+    {
+        
+        
+        $arr[$i][$j]=0;
+        
+      
+    }
+  
+    
+}
+
+foreach($max as $key1=>$value1)
+{
+    foreach($value1 as $key=>$value)
+    {
+        $value=str_split($value);
+        
+        $arr[$value[0]][$value[1]]=1;
+           
+        
+    }
   
   
-// }
+}
 
 
-
-
-
-
+for($i=0;$i<10;$i++)
+{
+  
+    for($j=0;$j<10;$j++)
+    {
+        
+        
+        echo $arr[$i][$j];
+        
+      
+    }
+  
+    echo "<br>";
+}
 
 
 
