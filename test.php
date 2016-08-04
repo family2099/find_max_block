@@ -10,9 +10,9 @@ ini_set('memory_limit', '-1');
 // 預設陣列定義
 
 $origin = array(
-    array(1, 1, 0, 1, 0, 0, 0, 0, 0, 0),
+    array(1, 1, 1, 1, 0, 0, 0, 0, 0, 0),
     array(1, 1, 0, 1, 1, 0, 0, 0, 0, 0),
-    array(0, 0, 0, 1, 1, 0, 0, 0, 0, 0),
+    array(0, 0, 0, 1, 1, 1, 0, 0, 0, 0),
     array(0, 0, 0, 0, 0, 1, 1, 1, 0, 0),
     array(1, 1, 1, 1, 1, 0, 0, 0, 0, 0),
     array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
@@ -29,7 +29,7 @@ $origin = array(
 
 
 
-// var_dump($origin[00]);//是NULL
+
 
 
 
@@ -54,6 +54,8 @@ for($i=0;$i<10;$i++)
 
 
 }
+
+//重複地去找區塊
 $k=0;
 while($found){
   
@@ -137,8 +139,7 @@ function count_area($found)
 
 }
 
-// var_dump($area_array);
-// echo "<hr>";
+//去顯示結果
 $area_n=count($area_array);
 // echo $area_n;
 
@@ -186,12 +187,9 @@ for($s=0;$s<$area_n;$s++)
     
 }
 
-// var_dump($max);
 
-// unset($max[0]);
-// $result = array_unique($max);
 
-// var_dump($result);
+
 for($i=0;$i<10;$i++)
 {
   
